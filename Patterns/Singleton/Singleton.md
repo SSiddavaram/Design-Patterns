@@ -17,3 +17,57 @@ Class Singleton{
   }
 }
 ```
+
+In multi-threaded environment, the above snippet will not return same instance for the threads that access it. To ensure same instance is returned, `synchronized` is used. 
+
+```
+class Singleton
+{
+	private static Singleton instance;
+	private Singleton()
+	{
+	
+	}
+
+	public static synchronized Singleton getInstance()
+	{
+		if (instance == null)
+			instance = new Singleton();
+
+		return instance;
+	}
+}
+```
+You can notice in the above code that getInstance method ensures that only one instance of the class is created. The constructor should not be accessible from the outside of the class to ensure the only way of instantiating the class would be only through the getInstance method. 
+
+The standard implementation shown in the above code is a thread safe implementation, but it's not the best thread-safe implementation beacuse synchronization is very expensive when we are talking about the performance. We can see that the synchronized method getInstance does not need to be checked for syncronization after the object is initialized. If we see that the singleton object is already created we just have to return it without using any syncronized block. This optimization consist in checking in an unsynchronized block if the object is null and if not to check again and create it in an syncronized block. This is called double locking mechanism.
+
+```
+//Lazy instantiation using double locking mechanism.
+class Singleton
+{
+	private static Singleton instance;
+
+	private Singleton()
+	{
+
+	}
+
+	public static Singleton getInstance()
+	{
+		if (instance == null)
+		{
+			synchronized(Singleton.class)
+			{
+				if (instance == null)
+				{
+					System.out.println("getInstance(): First time getInstance was invoked!");
+					instance = new Singleton();
+				}
+			}            
+		}
+
+		return instance;
+	}
+}
+```
