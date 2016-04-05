@@ -2,7 +2,7 @@
 
 Facade design pattern says: Provide a unified interface to a set of interfaces in a subsystem. Facade Pattern defines a higher-level interface that makes the subsystem easier to use. Facade exposes a simplified interface and internally it interacts with those components and gets the job done for you. It can be taken as one level of abstraction over an existing layer.
 
-A Facade shields the user from the complex details of the system and provides them with a simplified view of it which is easy to use. It also decouples the code that uses the system from the details of the subsystems, making it easier to modify the system later.
+A Facade shields the user from the complex details of the system and provides them with a `simplified view` of it which is `easy to use`. It also decouples the code that uses the system from the details of the subsystems, making it easier to modify the system later.
 
 Facade design pattern is one among the other design patterns that promote loose coupling. It emphasizes one more important aspect of design which is abstraction. By hiding the complexity behind it and exposing a simple interface it achieves abstraction.
 
