@@ -11,3 +11,7 @@ that will return the sub-class based on the input factory class.
 Factory method design pattern are modern way of creating objects. It offers some notable advantages over new() operator to create Objects e.g. By using Factory method design pattern client is completely decoupled with object creation code, which enforces Encapsulation and result is loosely coupled and highly cohesive system. Any change e.g. a new product from Factory requires almost no change in existing clients. On the other hand if you need an additional level of abstraction over your Factory pattern than Abstract Factory is the right design pattern to use. Abstract Factory allows you to use different Factory implementation for different purpose. Abstract Factory pattern can be implemented using Factory method and Singleton design pattern in Java.
 
 In short Abstract Factory design pattern provides abstraction over Factory pattern itself while Factory design pattern provides abstraction over products.
+
+Use the Factory Method pattern when there is a need to decouple a client from a particular product that it uses. Use the Factory Method to relieve a client of responsibility for creating and configuring instances of a product.
+
+Use the Abstract Factory pattern when clients must be decoupled from product classes. Especially useful for program configuration and modification. The Abstract Factory pattern can also enforce constraints about which classes must be used with others. It may be a lot of work to make new concrete factories.
