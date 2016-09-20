@@ -9,6 +9,6 @@ The strategy pattern is a behavioral object design pattern. In the strategy patt
 The strategy pattern is one way that composition can be used as an alternative to subclassing. Rather than providing different behaviors via subclasses overriding methods in superclasses, the strategy pattern allows different behaviors to be placed in Concrete Strategy classes which share the common Strategy interface. A Context class is composed of a reference to a Strategy.
 
 ### Where Would I Use This Pattern?
-The Strategy pattern is to be used where you want to choose the algorithm to use at runtime. A good use of the Strategy pattern would be saving files in different formats, running various sorting algorithms, or file compression.
+The Strategy pattern is to be used where you want to choose the algorithm to use at runtime. A good use of the Strategy pattern would be saving files in different formats, running various sorting algorithms, or file compression. Strategy pattern is used when we have multiple algorithm for a specific task and client decides the actual implementation to be used at runtime.
 
 The Strategy pattern provides a way to define a family of algorithms, encapsulate each one as an object, and make them interchangeable.  
